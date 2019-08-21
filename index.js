@@ -65,6 +65,14 @@ app.post('/api/questionary',
     }
 )
 
+app.post('/api/questionary/:id', 
+    (req, res) => {
+        Questionary.findOneAndUpdate({_id: req.params.id}, req.body)
+        .then((data)=>{res.json(data);})
+        
+    }
+)
+
 
 
 /**
